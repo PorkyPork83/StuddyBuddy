@@ -1,1 +1,1 @@
-Hallo Welt
+Mit Eclipse eingebunden
