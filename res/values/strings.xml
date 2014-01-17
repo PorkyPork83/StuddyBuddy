@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">StudyBuddy</string>
+    <string name="start">Quiz starten</string>
+    <string name="drawer_open">Menü geöffnet</string>
+    <string name="drawer_close">Menü geschlossen </string>
+    
+    <string name="titleSubjects">Fächer verwalten</string>
+    <string name="titleSets">Sets verwalten</string>
+    <string name="titleQuizChooser">Quiz auswählen</string>
+    <string name="titleSubjectCreator">Fach hinzufügen</string>
+    
+    <string name="confirm">Bestätigen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="back">Zurück</string>
+    <string name="done">Fertig</string>
+    <string name="next">Weiter</string>
+    <string name="exit">Beenden</string>
+    
+    <string name="chosen_subject">Gewähltes Fach:</string>
+    <string name="subject">Das Fach </string>
+    
+    <string name="added">wurde hinzugefügt</string>    
+    <string name="not_added">existiert bereits. Bitte einen anderen Namen verwenden</string>
+    <string name="choose_set">Bitte Set auswählen</string>
+    <string name="set">Neues Set erstellen</string>
+    <string name="add">Fach hinzufügen</string>
+    <string name="subjectName">Bitte den Namen des Faches eingeben:</string>
+    <string name="textFieldSubject">Name des Faches</string>
+    <string name="textFieldSet">Name des Sets</string>
+    <string name="setName">Bitte den Namen des Sets eingeben:</string>
+    
+
+    
+    <string name="available_sets">Verfügbare Sets:</string>
+    <string name="quiz">Zum Quiz</string>
+
+    <string name="no_name_given">Der Name des Faches muss mindestens 3 Zeichen enthalten</string>
+    <string name="language">Sprache auswählen</string>
+    
+    <!-- Items im Nav Drawer Menü -->
+    <string-array name="nav_drawer_items">
+        <item >Quiz erstellen</item>
+        <item >Fächer verwalten</item>
+        <item >Sets verwalten</item>
+    </string-array>
+    
+    <!-- Icons für die Items des Nav Drawers -->
+    <!-- Müssen in der Reihenfolge der dazugehörigen Items eingegeben werden -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/quiz</item>
+        <item>@drawable/add_subject</item>
+        <item>@drawable/set</item>
+    </array>
+    
+    <!-- Content Beschreibung -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+
+</resources>
