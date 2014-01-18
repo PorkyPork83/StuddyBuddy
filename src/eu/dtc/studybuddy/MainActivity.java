@@ -70,7 +70,6 @@ public class MainActivity extends Activity {
 		
 		// DB Temp Patch START
 		DbHelper db = new DbHelper(this);
-		db.addSubject(new Subject("DBFirst", db.getDateTime()));
 		ArrayList<Subject> db_subjects = db.getAllSubjects();
 		for (Subject subj : db_subjects) {
 			navDrawerItems.add(new NavDrawerItem(subj.getName(), navMenuIcons.getResourceId(0, -1)));
