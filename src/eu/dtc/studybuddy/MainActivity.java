@@ -1,11 +1,12 @@
 package eu.dtc.studybuddy;
 
 import eu.dtc.studybuddy.adapter.NavDrawerListAdapter;
+import eu.dtc.studybuddy.db.helper.DbHelper;
+import eu.dtc.studybuddy.db.model.Subject;
 import eu.dtc.studybuddy.helpers.FilesystemHelper;
 import eu.dtc.studybuddy.model.NavDrawerItem;
 
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -62,10 +63,20 @@ public class MainActivity extends Activity {
 
 		// Quiz starten
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
-		// Fäher verwalten
+		// Fï¿½her verwalten
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
 		// Sets verwalten
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+		
+		// DB Temp Patch START
+		DbHelper db = new DbHelper(this);
+		db.addSubject(new Subject("DBFirst", db.getDateTime()));
+		ArrayList<Subject> db_subjects = db.getAllSubjects();
+		for (Subject subj : db_subjects) {
+			navDrawerItems.add(new NavDrawerItem(subj.getName(), navMenuIcons.getResourceId(0, -1)));
+		}
+		
+		// DB Temp Patch END
 		
 		navMenuIcons.recycle();
 
@@ -84,12 +95,14 @@ public class MainActivity extends Activity {
 				R.string.app_name,
 				R.string.app_name 
 		) {
+			@Override
 			public void onDrawerClosed(View view) {
 				getActionBar().setTitle(mTitle);
 				// Aufruf von onPrepareOptionsMenu() um ActionBar Icons anzuzeigen
 				invalidateOptionsMenu();
 			}
 
+			@Override
 			public void onDrawerOpened(View drawerView) {
 				getActionBar().setTitle(mDrawerTitle);
 				// Aufruf von onPrepareOptionsMenu() um ActionBar Icons zu verbergen
@@ -148,7 +161,6 @@ public class MainActivity extends Activity {
 		case 2:
 			fragment = new SetManagerFragment();
 			break;
-
 		default:
 			break;
 		}

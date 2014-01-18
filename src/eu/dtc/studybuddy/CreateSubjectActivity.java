@@ -2,6 +2,8 @@ package eu.dtc.studybuddy;
 
 import java.util.ArrayList;
 
+import eu.dtc.studybuddy.db.helper.DbHelper;
+import eu.dtc.studybuddy.db.model.Subject;
 import eu.dtc.studybuddy.helpers.FilesystemHelper;
 import android.app.Activity;
 import android.os.Bundle;
@@ -56,6 +58,14 @@ public class CreateSubjectActivity extends Activity{
 					subjects.add(subject);
 					mHelper.saveSubjectIndex(this, subjects);
 					mHelper.createSubjectFolder(subject);
+					
+					// DB Temp Patch START
+					
+					DbHelper db = new DbHelper(this);
+					
+					db.addSubject(new Subject(subject, db.getDateTime()));
+					
+					// DB Temp Patch STOP
 				
 					Toast.makeText(this, 
 							getResources().getText(R.string.subject) + " \"" 
